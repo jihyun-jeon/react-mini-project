@@ -17,6 +17,7 @@ function Board() {
   const [showNewData, setShowNewData] = useState(false);
   const [clickedData, setClickedData] = useState();
   const [curPage, setPage] = useState(1);
+  const [checked, setChecked] = useState([]);
 
   const page = list.slice(...getPage(curPage));
   const pageCount = getPageCount(list.length, 5);
@@ -45,23 +46,66 @@ function Board() {
                 setClickedData(obj);
               }}
             >
+              <input
+                type="checkbox"
+                className="checkBox"
+                defaultChecked={checked.includes(obj.id)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setChecked((prev) => {
+                    if (e.target.checked) {
+                      return [...prev, obj.id];
+                    }
+
+                    return prev.filter((id) => id !== obj.id);
+                  });
+                }}
+              />
               <span className="id-col">{obj.id}</span>
               <span className="title-col">{obj.title}</span>
               <span className="author-col">{obj.author}</span>
+              <span className="deleteBtn">
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setList((prev) => {
+                      const clickId = obj.id;
+                      const updata = prev.filter((obj) => obj.id !== clickId);
+                      return updata;
+                    });
+                  }}
+                >
+                  X
+                </button>
+              </span>
             </div>
           ))}
         </div>
-        <ol className="on">
-          {pageList.map((el) => (
-            <li
-              key={el}
-              className={curPage === el ? "on" : ""}
-              onClick={() => setPage(el)}
-            >
-              {el}
-            </li>
-          ))}
-        </ol>
+        <div className="ul-wrapper">
+          <ol className="on">
+            {pageList.map((el) => (
+              <li
+                key={el}
+                className={curPage === el ? "on" : ""}
+                onClick={() => setPage(el)}
+              >
+                {el}
+              </li>
+            ))}
+          </ol>
+          <button
+            type="button"
+            onClick={() => {
+              setList((prev) => {
+                return prev.filter((obj) => !checked.includes(obj.id));
+              });
+              setChecked([]);
+            }}
+          >
+            일괄삭제
+          </button>
+        </div>
       </div>
       <Detail
         current={clickedData}

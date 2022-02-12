@@ -21,6 +21,9 @@
   padding: 10px 15px;
   border-bottom: 1px solid black;
 }
+.header span {
+  margin-left: 10px;
+}
 
 .id-col {
   display: inline-block;
@@ -29,16 +32,25 @@
 
 .title-col {
   display: inline-block;
-  width: 60%;
+  width: 40%;
 }
 
 .author-col {
   display: inline-block;
   width: 20%;
 }
+.deleteBtn {
+  display: inline-block;
+  width: 10%;
+}
+
+.ul-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 80vw;
+}
 
 ol {
-  width: 80vw;
   display: flex;
   justify-content: center;
   align-items: center;
