@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function App() {
+export default function Todolist() {
   const [todos, setTodos] = useState([
     { id: 0, name: "우유 마시기", done: false },
     { id: 1, name: "장보기", done: true },
@@ -22,7 +22,7 @@ export default function App() {
     ]);
     setinputV("");
   };
-  
+
   // [P1] Data.now를 이용하여 아무 랜덤한 아이디 값을 씀.
 
   /*삭제버튼 */

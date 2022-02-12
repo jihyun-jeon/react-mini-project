@@ -1,0 +1,152 @@
+.bulletin {
+  margin-left: 10px;
+  padding-top: 20px;
+}
+
+.bulletin h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.board-wrapper {
+  width: 80vw;
+  margin-bottom: 20px;
+  min-height: 300px;
+  border-radius: 20px;
+  border: 1px solid black;
+}
+
+.header {
+  padding: 10px 15px;
+  border-bottom: 1px solid black;
+}
+
+.id-col {
+  display: inline-block;
+  width: 20%;
+}
+
+.title-col {
+  display: inline-block;
+  width: 60%;
+}
+
+.author-col {
+  display: inline-block;
+  width: 20%;
+}
+
+ol {
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ol li {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+ol li.on {
+  background-color: yellow;
+}
+
+ol li + li {
+  margin-left: 11px;
+}
+
+.list {
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.detail {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 70vw;
+  min-height: 400px;
+  border: 1px solid black;
+  border-radius: 20px;
+  background-color: #fff;
+}
+
+.detail h1 {
+  padding-left: 5px;
+  color: red;
+  font-size: 2rem;
+  font-weight: bold;
+  position: relative;
+}
+
+.detail button {
+  position: absolute;
+  top: 2px;
+  right: 6px;
+  background-color: transparent;
+  border-radius: 50%;
+  padding: 0px;
+  width: 20px;
+  height: 20px;
+}
+
+.detail-author {
+  text-align: right;
+  padding-right: 5px;
+}
+
+.newData {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 70vw;
+  min-height: 400px;
+  border: 1px solid black;
+  border-radius: 20px;
+  background-color: #fff;
+}
+
+.newDel {
+  position: absolute;
+  right: 0px;
+}
+
+.newData p {
+  margin: 20px 10px;
+}
+
+.newData p label {
+  display: inline-block;
+  width: 10%;
+  vertical-align: top; /* inline데이터의 수직정렬 */
+}
+
+.newData p input {
+  padding: 0px;
+  box-sizing: border-box; /*border를 포함해서 너비가 잡히게 됨.*/
+  width: 70%;
+}
+
+.newData p textarea {
+  width: 70%;
+  height: 300px;
+}
+
+.addBtn-wrapper {
+  text-align: center;
+  padding: 11px 0;
+}
+
+.createBtn-wrapper {
+  width: 80vw;
+  text-align: right;
+  margin-bottom: 10px;
+}
